@@ -2,6 +2,15 @@
 import random
 
 class Player:
+    """
+        Represents a player in the Pig game.
+
+        Attributes:
+            name (str): The name of the player.
+            score (int): The player's total score.
+            is_turn (bool): Whether it's currently the player's turn.
+            turn_total (int): The player's accumulated score in the current turn.
+        """
     def __init__(self, name):
         self.name = name
         self.score = 0
@@ -16,8 +25,7 @@ class Player:
             return False
         else:
             self.turn_total += roll
-            print (f"\n1"
-                   f"\n{self.name} rolled a {roll}. Turn Total: {self.turn_total}, Total Score: {self.score}\n")
+            print (f"\n{self.name} rolled a {roll}. Turn Total: {self.turn_total}, Total Score: {self.score}\n")
             return True
 
     def hold(self):
@@ -30,6 +38,12 @@ class Player:
         self.is_turn = False
 
 class Die:
+    """
+        Represents a die with a specified number of sides.
+
+        Attributes:
+            sides (int): The number of sides on the die (default is 6).
+        """
     def __init__(self, sides = 6):
         self.sides = sides
 
@@ -37,6 +51,15 @@ class Die:
         return random.randint(1, self.sides)
 
 class Game:
+    """
+        Manages the Pig game between two players.
+
+        Attributes:
+            player1 (Player): The first player.
+            player2 (Player): The second player.
+            current_player (Player): The player whose turn it is.
+            die (Die): The die used in the game.
+        """
     def __init__(self, player1_name, player2_name):
         self.player1 = Player (player1_name)
         self.player2 = Player (player2_name)
