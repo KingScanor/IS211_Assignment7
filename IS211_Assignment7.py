@@ -108,7 +108,7 @@ class Game:
             print(f"\nCongratulations to the winner,{self.player2.name}.")
 
 if __name__ == "__main__":
-    game = Game("Player 1","Player 2")
+    game = Game ("Player 1","Player 2")
     game.start_game()
 
 
